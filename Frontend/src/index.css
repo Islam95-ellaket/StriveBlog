@@ -1,0 +1,187 @@
+/* ============================================================
+   Strive Blog — Design system
+   Token globali, base tipografica e utility condivise.
+   ============================================================ */
+
+:root {
+  /* Palette */
+  --sb-bg: #f6f7f9;
+  --sb-surface: #ffffff;
+  --sb-text: #1a1d21;
+  --sb-text-muted: #6c757d;
+  --sb-border: #e4e7eb;
+  --sb-accent: #0d7a4a;
+  --sb-accent-hover: #0a633c;
+  --sb-accent-soft: #e6f4ec;
+  --sb-dark: #16181d;
+  --sb-dark-hover: #2a2e36;
+  --sb-danger: #c92a2a;
+
+  /* Effetti */
+  --sb-radius: 14px;
+  --sb-radius-sm: 10px;
+  --sb-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --sb-shadow-md: 0 8px 24px rgba(16, 24, 40, 0.08);
+  --sb-shadow-lg: 0 16px 40px rgba(16, 24, 40, 0.12);
+
+  /* Layout */
+  --sb-navbar-height: 72px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Ubuntu", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: var(--sb-bg);
+  color: var(--sb-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout principale: il footer resta in fondo anche con poco contenuto */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1 0 auto;
+  width: 100%;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+/* Focus visibile per navigazione da tastiera */
+a:focus-visible,
+button:focus-visible,
+.form-control:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid rgba(13, 122, 74, 0.35);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ---------- Componenti condivisi ---------- */
+
+/* Card contenitore delle pagine (login, form, profilo) */
+.sb-card {
+  background: var(--sb-surface);
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  box-shadow: var(--sb-shadow-sm);
+}
+
+/* Bottone accento (variante "dark" del brand) */
+.btn-sb-dark {
+  background-color: var(--sb-dark);
+  border-color: var(--sb-dark);
+  color: #fff;
+}
+
+.btn-sb-dark:hover,
+.btn-sb-dark:focus-visible {
+  background-color: var(--sb-dark-hover);
+  border-color: var(--sb-dark-hover);
+  color: #fff;
+}
+
+.btn-sb-dark:disabled {
+  background-color: var(--sb-dark);
+  border-color: var(--sb-dark);
+  opacity: 0.65;
+}
+
+/* Avatar con iniziali (fallback quando manca l'immagine) */
+.sb-avatar-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--sb-dark);
+  color: #fff;
+  font-weight: 500;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.sb-avatar-img {
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Zona di upload immagine (cover e avatar) */
+.sb-upload-zone {
+  border: 2px dashed var(--sb-border);
+  border-radius: var(--sb-radius-sm);
+  background: #fbfbfd;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease-in-out, background 0.15s ease-in-out;
+}
+
+.sb-upload-zone:hover,
+.sb-upload-zone:focus-visible {
+  border-color: var(--sb-accent);
+  background: var(--sb-accent-soft);
+}
+
+.sb-upload-zone.is-invalid {
+  border-color: var(--sb-danger);
+}
+
+.sb-upload-hint {
+  color: var(--sb-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Anteprima immagini caricate */
+.sb-upload-preview {
+  text-align: center;
+}
+
+.sb-upload-preview-image {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: var(--sb-radius-sm);
+  border: 1px solid var(--sb-border);
+  box-shadow: var(--sb-shadow-sm);
+  display: block;
+}
+
+.sb-upload-preview-avatar .sb-avatar-img {
+  border: 3px solid var(--sb-surface);
+  box-shadow: var(--sb-shadow-md);
+}
+
+/* Titoli di pagina */
+.sb-page-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.sb-text-accent {
+  color: var(--sb-accent);
+}
+
+/* Footer */
+.app-footer {
+  flex-shrink: 0;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--sb-border);
+  background: var(--sb-surface);
+  color: var(--sb-text-muted);
+  font-size: 0.9rem;
+}
+
+.app-footer-note {
+  font-weight: 700;
+  color: var(--sb-accent);
+}

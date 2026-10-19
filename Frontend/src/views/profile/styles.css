@@ -1,0 +1,27 @@
+.profile-card {
+  padding: 2rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.profile-identity {
+  min-width: 0;
+}
+
+.profile-avatar-edit {
+  margin-top: 1.5rem;
+  max-width: 420px;
+}
+
+@media (max-width: 575.98px) {
+  .profile-card {
+    padding: 1.25rem;
+  }
+}

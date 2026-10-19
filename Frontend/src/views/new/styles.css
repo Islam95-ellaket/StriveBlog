@@ -1,0 +1,41 @@
+.new-blog-container {
+  max-width: 860px;
+  background: var(--sb-surface);
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  box-shadow: var(--sb-shadow-sm);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Editor WYSIWYG (spostato qui da views/blog/styles.css) */
+.new-blog-editor-wrapper {
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius-sm);
+  background: #fff;
+}
+
+.new-blog-toolbar {
+  border: none;
+  border-bottom: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius-sm) var(--sb-radius-sm) 0 0;
+  margin-bottom: 0;
+}
+
+.new-blog-editor {
+  min-height: 300px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 0.5rem 1rem;
+}
+
+.new-blog-editor-wrapper:focus-within {
+  border-color: var(--sb-accent);
+  box-shadow: 0 0 0 3px rgba(13, 122, 74, 0.15);
+}
+
+@media (max-width: 575.98px) {
+  .new-blog-container {
+    padding: 1.25rem;
+  }
+}
